@@ -29,7 +29,7 @@ class Sidebar extends React.Component{
                     <a href="/">
                         <button className="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-10 rounded-md">Home</button>
                     </a>
-                    <a href="https://github.com/boboiazumi">
+                    <a href="https://github.com/BoboiAzumi/ReactNontonAnime">
                         <button className="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">Github</button>
                     </a>
                     <a href={API.server}>
