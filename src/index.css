@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    html:fullscreen {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+body{
+    background-color: #171214;
+}
+
+:root{
+    --plyr-color-main: rgb(30 41 59);
+}
+
+.bordereps {
+    border:solid #585EFD;
+}
+
+.videoplay {
+    margin-top: 18%;
+}
+
+.progressbar {
+    margin-top: 2%;
+}
+
+progress{
+    width: 100%;
+    color: white;
+}
+
+progress::-moz-progress-bar { background: white; }
+progress::-webkit-progress-value { background: white; }

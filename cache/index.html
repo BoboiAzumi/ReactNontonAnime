@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/index.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+    let toggle = false;
+    function collapseToggle(){
+        if(!toggle){
+            document.getElementById("espege").classList.add("rotate-90")
+            document.getElementById("collapseToggleMobile").style = "visibility:visible";
+            toggle = !toggle;
+        }
+        else{
+            document.getElementById("espege").classList.remove("rotate-90")
+            document.getElementById("collapseToggleMobile").style = "visibility:hidden";
+            toggle = !toggle;
+        }
+    }
+</script>
+<body class="bg-neutral-900 flex justify-center">
+    <div class="block">
+        <div class="md:hidden bg-slate-800 flex justify-start">
+            <a href="#">
+                <button class="mx-10 py-5 my-2" onclick="collapseToggle()">
+                    <svg viewBox="0 0 10 10"
+                        id="espege"
+                         height="30"
+                         width="30"
+                         role="img"
+                         class="svg-icon fill-white"
+                         focusable="false">
+                        <path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z"/>
+                    </svg>
+                </button>
+            </a>
+            <div class="my-7">
+                <h1 class="text-white text-2xl">Nonton Anime</h1>
+            </div>
+        </div>
+        <div class="absolute md:hidden" id="collapseToggleMobile" style="visibility:hidden">
+            <div class="bg-slate-800 rounded-md grid grid-flow-row">
+                <a href="#">
+                    <button class="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-10 rounded-md">Home</button>
+                </a>
+                <a href="#">
+                    <button class="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-5 rounded-md">Github</button>
+                </a>
+                <a href="#">
+                    <button class="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-5 rounded-md">API</button>
+                </a>
+                <div class="grid grid-flow-col gap-1">
+                    <form>
+                        <input type="text" placeholder="Search" name="search" class="md:w-20 md:mt-5 lg:w-36 2xl:w-56 h-12 ml-10 pl-4 rounded-md"/>
+                        <input type="submit" value="GO" name="submit" class="bg-zinc-700 text-slate-300 w-20 py-3 mt-5 md:ml-0 lg:ml-3 rounded-md mb-28"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+       <div class="container px-10 pt-7 md:mx-10 md:px-24 md:pt-10">
+            <div class="grid grid-flow-col md:gap-4">
+                <!--Start Navbar-->
+                <div class="hidden md:block md:w-48 lg:w-80 2xl:w-96">
+                    <div class="bg-slate-800 rounded-md">
+                        <a href="#">
+                            <button class="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-10 rounded-md">Home</button>
+                        </a>
+                        <a href="#">
+                            <button class="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">Github</button>
+                        </a>
+                        <a href="#">
+                            <button class="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">API</button>
+                        </a>
+                        <div class="grid grid-flow-col gap-1">
+                            <form>
+                                <input type="text" placeholder="Search" name="search" class="md:w-20 md:mt-5 lg:w-36 2xl:w-56 h-12 ml-10 pl-4 rounded-md"/>
+                                <input type="submit" value="GO" name="submit" class="bg-zinc-700 text-slate-300 md:w-12 lg:w-20 py-3 mt-5 md:ml-0 lg:ml-3 rounded-md mb-28"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--End Navbar-->
+                <div class="grid grid-flow-row">
+                    <img src="/public/img/kaguya.png" class="mx-0 rounded-md w-auto 2xl:w-screen"/>
+                    <p class="text-white mt-9">Last Update</p>
+                    <!--Cell Handler-->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 grid-flow-row-dense gap-4">
+                        <!--Cell Start-->
+                        <div class="w-full md:w-60 lg:w-52 2xl:w-72">
+                            <div class="flex flex-wrap justify-center bg-slate-800 h-auto p-2">
+                                <div class="grid grid-rows-1 grid-flow-row gap-1">
+                                    <a href="#">
+                                        <img src="/public/img/maougakuin.jpg" class="rounded-lg" width="100%"/>
+                                        <h4 class="text-white font-sans font-normal text-xs mt-3">Maou Gakuin no Futekigousha Season 2 Subtitle Indonesia</h4>
+                                    </a>
+                                    <h5 class="text-slate-300 font-sans font-thin text-xs">Action,Fantasy,School</h5>
+                                    <div class="grid grid-rows-1 grid-flow-col mt-2">
+                                        <h5 class="text-white">7.67</h5>
+                                        <h5 class="text-white text-right">Ongoing</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Cell End-->
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</body>
+</html>
