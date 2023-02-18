@@ -43,8 +43,8 @@ class Content extends React.Component{
                         imageanime={window.atob(field.img)}
                         title={field.title}
                         genre={field.genre.join(", ")}
-                        rating="7.67"
-                        status="Ongoing"/>
+                        rating={field.rating}
+                        status={field.status}/>
                     ))}
                 </Cellhandler>
             </div>
