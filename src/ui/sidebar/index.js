@@ -1,6 +1,4 @@
 import React from 'react'
-import API from '../../api'
-
 
 class Sidebar extends React.Component{
     constructor(props){
@@ -32,8 +30,8 @@ class Sidebar extends React.Component{
                     <a href="https://github.com/BoboiAzumi/ReactNontonAnime">
                         <button className="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">Github</button>
                     </a>
-                    <a href={API.server}>
-                        <button className="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">API</button>
+                    <a href="/settings/">
+                        <button className="bg-zinc-700 text-slate-300 md:w-32 lg:w-60 2xl:w-80 py-3 mx-10 mt-5 rounded-md">Settings</button>
                     </a>
                     <div className="grid grid-flow-col gap-1">
                         <form onSubmit={this.submit.bind(this)}>
