@@ -55,7 +55,7 @@ class MobileCollapse extends React.Component{
                 <h1 className="text-white text-2xl">Nonton Anime</h1>
             </div>
         </div>
-        <div className="absolute md:hidden w-full" id="collapseToggleMobile" style={{visibility:this.state.toggle? "visible" : "hidden"}}>
+        <div className="absolute z-50 md:hidden w-full shadow-lg" id="collapseToggleMobile" style={{visibility:this.state.toggle? "visible" : "hidden"}}>
             <div className="bg-slate-800 rounded-md grid grid-flow-row">
                 <a href="/">
                     <button className="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-10 rounded-md">Home</button>
