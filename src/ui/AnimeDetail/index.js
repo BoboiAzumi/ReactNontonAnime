@@ -7,7 +7,8 @@ class AnimeDetail extends React.Component{
         this.props = props
         this.state = {
             info : {},
-            eps : []
+            eps : [],
+            isTargetBlank : false
         }
     }
 
@@ -35,6 +36,11 @@ class AnimeDetail extends React.Component{
             console.log(json.data.episode_list)
         }).catch((e) =>{
             console.log(e)
+        })
+
+        let isTargetBlank = JSON.parse(localStorage.getItem("settings")).target_blank_click;
+        this.setState({
+            isTargetBlank: isTargetBlank
         })
     }
 
@@ -82,7 +88,7 @@ class AnimeDetail extends React.Component{
                                     {data.text}
                                 </td>
                                 <td>
-                                    <a href={"/stream/"+this.props.animeid+"/"+data.episode_id}>
+                                    <a href={"/stream/"+this.props.animeid+"/"+data.episode_id} target={this.state.isTargetBlank ? "blank" : ""}>
                                         <button className="rounded-md bg-blue-500 px-5 py-2">
                                             Tonton
                                         </button>

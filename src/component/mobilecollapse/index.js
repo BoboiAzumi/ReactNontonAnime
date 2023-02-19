@@ -1,5 +1,4 @@
 import React from 'react'
-import API from '../../api'
 
 class MobileCollapse extends React.Component{
     constructor(props){

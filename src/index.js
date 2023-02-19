@@ -8,6 +8,7 @@ import Content from './ui/content'
 import AnimeDetail from './ui/AnimeDetail'
 import NotFound from './component/NotFound';
 import AnimeStream from './ui/AnimeStream';
+import Settings from './ui/Settings'
 
 import './index.css';
 
@@ -52,6 +53,7 @@ root.render(
             <Route path="/anime/" element={<Detail/>} />
             <Route path="/anime/:animeid" element={<Detail />} />
             <Route path="/stream/:animeid/:epsid" element={<Stream/>} />
+            <Route path="/settings/" element={<Settings />} />
 
             <Route path="*" element={<NotFound />}/>
           </Routes>
