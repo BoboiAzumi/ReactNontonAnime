@@ -33,7 +33,7 @@ class AnimeDetail extends React.Component{
             this.setState({
                 eps : json.data.episode_list
             })
-            console.log(json.data.episode_list)
+            //console.log(json.data.episode_list)
         }).catch((e) =>{
             console.log(e)
         })
@@ -42,6 +42,8 @@ class AnimeDetail extends React.Component{
         this.setState({
             isTargetBlank: isTargetBlank
         })
+
+        
     }
 
     render(){

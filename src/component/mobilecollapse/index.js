@@ -65,6 +65,9 @@ class MobileCollapse extends React.Component{
                 <a href="/settings/">
                     <button className="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-5 rounded-md">Settings</button>
                 </a>
+                <a href="/history/">
+                    <button className="bg-zinc-700 text-slate-300 w-72 py-3 mx-10 mt-5 rounded-md">Riwayat</button>
+                </a>
                 <div className="grid grid-flow-col gap-1">
                     <form onSubmit={this.submit.bind(this)}>
                         <input type="text" placeholder="Search" name="search" className="md:w-20 md:mt-5 lg:w-36 2xl:w-56 h-12 ml-10 pl-4 rounded-md" onChange={this.search.bind(this)}/>

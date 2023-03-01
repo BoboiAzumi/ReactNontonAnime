@@ -21,7 +21,8 @@ class AnimeStream extends React.Component{
                     }
                 ],
                 poster: "/img/kaguya.png"
-            }
+            },
+            mega: {}
         }
         this.defaultPlyrOptions = Plyr.defaultProps.options
         this.defaultPlyrOptions.autoplay = true
@@ -84,6 +85,13 @@ class AnimeStream extends React.Component{
 
     componentDidMount(){
         this.sourceGet()
+        fetch(API.getmega+this.props.epsid).then((res) =>{
+            return res.json()
+        }).then((json) =>{
+            this.setState({
+                mega: json
+            })
+        })
     }
 
     /*
@@ -105,8 +113,35 @@ class AnimeStream extends React.Component{
                     </a>
                 </div>
                 <p className="text-white text-lg mb-5">{this.state.title}</p>
-                <div className="block w-full mb-9">
+                <div className="block w-full mb-2">
                     <Plyr ref={(player) => (this.player.current = player)} {...{source: this.state.source, options: this.defaultPlyrOptions}}/>
+                </div>
+                <div className="block mb-9">
+                    {this.state.mega.hasOwnProperty("data") ? (
+                       <>
+                        
+                            <>
+                                <p className="text-white">Stream Lainnya</p>
+                                <table className="w-full">
+                                    <tbody>{this.state.mega.data.map((data, index) => (
+                                        <tr key={index}>
+                                            <td className='text-white'>
+                                                {data.quality+"p"}
+                                            </td>
+                                            <td>
+                                                <a href={data.stream} className="text-white" target="blank">Link</a>
+                                            </td>
+                                        </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </>
+                        
+                       </>
+                    ): (
+                        <>
+                        </>
+                    )}
                 </div>
             </div>
             </>
