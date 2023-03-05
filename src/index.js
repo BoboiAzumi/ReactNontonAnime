@@ -9,6 +9,7 @@ import AnimeDetail from './ui/AnimeDetail'
 import NotFound from './component/NotFound';
 import AnimeStream from './ui/AnimeStream';
 import Settings from './ui/Settings'
+import AnimeMovie from './ui/AnimeMovie'
 
 import './index.css';
 
@@ -39,6 +40,15 @@ function Stream(){
   )
 }
 
+function Movie(){
+  let {movieid} = useParams()
+  return(
+    <>
+      <AnimeMovie epsid={movieid} />
+    </>
+  )
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -54,6 +64,7 @@ root.render(
             <Route path="/anime/:animeid" element={<Detail />} />
             <Route path="/stream/:animeid/:epsid" element={<Stream/>} />
             <Route path="/settings/" element={<Settings />} />
+            <Route path="/movie/:movieid" element={<Movie />} />
 
             <Route path="*" element={<NotFound />}/>
           </Routes>

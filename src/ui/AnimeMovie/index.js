@@ -145,7 +145,7 @@ class AnimeStream extends React.Component{
             <>
             <div className="bg-slate-800 rounded-md w-full pt-3 px-3 md:pt-10 md:px-10 col-span-12 mt-3 sm:mt-0">
                 <div className="block">
-                    <a href={"/anime/"+this.props.animeid}>
+                    <a href="/">
                         <button className="bg-zinc-700 text-white p-3 rounded-md mb-3">
                             Kembali
                         </button>

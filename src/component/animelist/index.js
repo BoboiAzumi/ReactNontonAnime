@@ -6,6 +6,11 @@ class Animelist extends React.Component{
         this.props = props
     }
 
+    onerror(e){
+        e.target.src = "/img/notfound.jpg"
+        e.target.className = "rounded-lg object-contain h-64"
+    }
+
     render(){
         return (
             <div className="w-full md:w-60 lg:w-52 2xl:w-72">
@@ -13,7 +18,7 @@ class Animelist extends React.Component{
                     <div className="grid grid-rows-1 grid-flow-row gap-1">
                         <a href={"/anime/"+this.props.animeid} className="w-full">
                             <div className="flex flex-wrap justify-center">
-                                <img src={this.props.imageanime} alt="Anime" className="rounded-lg object-fill" />
+                                <img src={this.props.imageanime} alt="Anime" className="rounded-lg object-fill" onError={this.onerror.bind(this)}/>
                             </div>
                             <h4 className="text-white font-sans font-normal text-xs mt-3">{this.props.title}</h4>
                         </a>

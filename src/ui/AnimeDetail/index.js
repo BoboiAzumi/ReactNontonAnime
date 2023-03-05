@@ -13,30 +13,51 @@ class AnimeDetail extends React.Component{
     }
 
     componentDidMount(){
-        fetch(API.info+this.props.animeid)
-        .then((res) => {
-            return res.json()
-        })
-        .then((json) => {
-            this.setState({
-                info : json.data
+        if(localStorage.getItem("server") === "https://nontonanime.thedark38.repl.co"){
+            fetch(API.info+this.props.animeid)
+            .then((res) => {
+                return res.json()
             })
-        }).catch((e) =>{
-            console.log(e)
-        })
+            .then((json) => {
+                this.setState({
+                    info : json.data
+                })
+            }).catch((e) =>{
+                console.log(e)
+            })
 
-        fetch(API.episode+this.props.animeid)
-        .then((res) => {
-            return res.json()
-        })
-        .then((json) => {
-            this.setState({
-                eps : json.data.episode_list
+            fetch(API.episode+this.props.animeid)
+            .then((res) => {
+                return res.json()
             })
-            //console.log(json.data.episode_list)
-        }).catch((e) =>{
-            console.log(e)
-        })
+            .then((json) => {
+                this.setState({
+                    eps : json.data.episode_list
+                })
+                //console.log(json.data.episode_list)
+            }).catch((e) =>{
+                console.log(e)
+            })
+        }
+        else{
+            fetch(API.getallinfo+this.props.animeid)
+            .then((res) => {
+                return res.json()
+            })
+            .then((json) => {
+                console.log(API.getallinfo+this.props.animeid)
+                if(json.status === 302){
+                    document.location.href = "/movie/"+this.props.animeid
+                }
+                this.setState({
+                    info : json.data,
+                    eps: json.data.episode_list
+                })
+                //console.log(this.state.info)
+            }).catch((e) =>{
+                console.log(e)
+            })
+        }
 
         let isTargetBlank = JSON.parse(localStorage.getItem("settings")).target_blank_click;
         this.setState({

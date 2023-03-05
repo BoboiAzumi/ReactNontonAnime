@@ -79,9 +79,7 @@ class Settings extends React.Component{
                         <p className="text-white text-md">Interface</p>
                         <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" defaultValue={localStorage.getItem("interface")} disabled={localStorage.getItem("server") === "https://nontonanime.thedark38.repl.co" ? true : false} onChange={this.interfaceSelected.bind(this)}>
                             <option value="OD">OD</option>
-                            <option value="GN">GN</option>
-                            <option value="NAID">NAID</option>
-                            <option value="KN">KN</option>
+                            <option value="nnmx">NNMX</option>
                         </select>
                     </div>
 

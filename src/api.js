@@ -9,7 +9,9 @@ const API = {
     getautostream: HOST+PREFIX+"/anime/episode/getautostream/",
     gettitle : HOST+PREFIX+"/anime/episode/gettitle/",
     getstream : HOST+PREFIX+"/anime/episode/getstream/",
-    getmega : HOST+PREFIX+"/anime/episode/getmega/"
+    getmega : HOST+PREFIX+"/anime/episode/getmega/",
+    getstreamdata: HOST+PREFIX+"/anime/episode/getstreamdata/",
+    getallinfo:  HOST+PREFIX+"/anime/getallinfo/"
 }
 
 export default API 
